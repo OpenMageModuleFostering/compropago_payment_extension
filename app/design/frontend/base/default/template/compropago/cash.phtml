@@ -18,25 +18,37 @@ $_getProviders  = $_model->getProviders();
     provider = document.querySelector("#store_code_selected");
     paymentcheck.checked = true;
 
-    btn = document.querySelector("button[ onclick^=payment ]");
-    btn.setAttribute("onclick"," ");
+    if(btn = document.querySelector("button[ onclick^=payment ]")){
+        btn.setAttribute("onclick"," ");
 
-    phone = document.querySelector("[title=Telephone]").value;
-    document.querySelector("#customer_phone").value = phone;
+        btn.addEventListener("click",function(evt){
+            evt.preventDefault();
 
-    btn.addEventListener("click",function(evt){
-        evt.preventDefault();
-
-        if(paymentcheck.checked){
-            if(provider.value == ""){
-                alert("Seleccione una tienda para realizar el pago");
+            if(paymentcheck.checked){
+                if(provider.value == ""){
+                    alert("Seleccione una tienda para realizar el pago");
+                }else{
+                    payment.save();
+                }
             }else{
                 payment.save();
             }
-        }else{
-            payment.save();
-        }
+        });
+    }
+
+
+    var phoneInput = document.querySelector("[name*=telephone]");
+    var cpPhoneInput = document.querySelector("#customer_phone");
+
+
+    phoneInput.addEventListener("change",function(evt){
+        cpPhoneInput.value = phoneInput.value;
     });
+
+
+    cpPhoneInput.value = phoneInput.value;
+
+
 </script>
 
 

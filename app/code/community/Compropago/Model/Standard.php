@@ -190,7 +190,23 @@ class Compropago_Model_Standard extends Mage_Payment_Model_Method_Abstract
             $records []= $record;
         }
 
-        return $records;
+
+        $sessionCheckout = Mage::getSingleton('checkout/session');
+        $quoteId = $sessionCheckout->getQuoteId();
+
+        $quote = Mage::getModel("sales/quote")->load($quoteId);
+        $grandTotal = $quote->getData('grand_total');
+
+        $finalRecord = array();
+
+        foreach ($records as $value){
+            if($value['transaction_limit'] >= $grandTotal){
+                $finalRecord []= $value;
+            }
+        }
+
+
+        return $finalRecord;
     }
 
     /**
