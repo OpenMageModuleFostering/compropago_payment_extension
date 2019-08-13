@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Compropago_Payment_Extension",
+    "type": "magento-module",
+    "license": "OSL-v3.0",
+    "homepage": "",
+    "description": "This extension allows you to receive cash payments in the convenience store Mexico:OXXO, 7Eleven, Elektra....",
+    "authors": [
+    {
+        "name": "Oswaldo Lopez Garcia",
+        "email": "waldix@compropago.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
