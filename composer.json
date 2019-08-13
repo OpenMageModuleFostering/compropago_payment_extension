@@ -3,7 +3,7 @@
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
-    "description": "Con ComproPago puede recibir pagos en OXXO, 7Eleven y muchas tiendas más en todo México.",
+    "description": "Se agrego currency Exchange",
     "authors": [
     {
         "name": "Eduardo Aguilar",
