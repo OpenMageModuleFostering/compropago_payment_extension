@@ -259,12 +259,9 @@ class Compropago_CpPayment_Model_Standard extends Mage_Payment_Model_Method_Abst
             (int)trim($this->getConfigData('compropago_mode')) == 1 ? true : false
         );
 
-        $sessionCheckout = Mage::getSingleton('checkout/session');
-        $quoteId         = $sessionCheckout->getQuoteId();
-        $quote           = Mage::getSingleton('checkout/session')->getQuote($quoteId);
-        $orderId         = $quote->getReservedOrderId();
-        $order           = Mage::getModel('sales/order')->loadByIncrementId($orderId);
-        $grandTotal      = (float)$order->getBaseGrandTotal();
+        $quote      = Mage::getModel('checkout/session')->getQuote();
+        $quoteData  = $quote->getData();
+        $grandTotal = $quoteData['grand_total'];
 
         $providers = $client->api->listProviders(false, $grandTotal);
         $filter    = explode(',', $this->getConfigData('compropago_provider_available'));
