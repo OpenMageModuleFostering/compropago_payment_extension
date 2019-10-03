@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Compropago_Payment_Extension",
+    "name": "OpenMageModuleFostering\/Compropago_Payment_Extension",
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
     "description": "Precision algorithm",
     "authors": [
-    {
-        "name": "Eduardo Aguilar",
-        "email": "eduardo.aguilar@compropago.com"
-    }
-],
+        {
+            "name": "Eduardo Aguilar",
+            "email": "eduardo.aguilar@compropago.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
