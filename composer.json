@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/Compropago_Payment_Extension",
+    "name": "openmage-module-fostering\/compropago_payment_extension",
     "type": "magento-module",
-    "license": "OSL-v3.0",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Precision algorithm",
     "authors": [
